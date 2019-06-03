@@ -464,27 +464,27 @@ function calculaProduct(array) {
   for (let index = 0; index < array.length; index++) {
     product *= array[index];
   }
-  console.log(`el producto es: ${product}`);
+  // console.log(`el producto es: ${product}`);
   return product;
 }
 function selectArrayHorizontal(matrix, i, j) {
   array = matrix[i].slice(j, j + 4);
-  console.log(`El array Horizontal ${array}`);
+  // console.log(`El array Horizontal ${array}`);
   return array;
 }
 function compareMaxProduct(selectedArray, product, maxProduct) {
   if (selectedArray.includes(0)) {
-    console.log(`No evaluo, elemento a 0 en el array`);
+    // console.log(`No evaluo, elemento a 0 en el array`);
     product = 0;
   } else {
     product = calculaProduct(selectedArray);
     if (product > maxProduct) {
-      console.log(
-        `El maxProduct es: ${maxProduct} y el product es: ${product}`
-      );
+      // console.log(
+      //  `El maxProduct es: ${maxProduct} y el product es: ${product}`
+      // );
       maxProduct = product;
-      console.log(`Como product es mayor, el  maxProduct es: ${maxProduct}
-      ${selectedArray}`);
+      // console.log(`Como product es mayor, el  maxProduct es: ${maxProduct}
+      // ${selectedArray}`);
     }
   }
   return maxProduct;
@@ -494,7 +494,7 @@ function selectArrayVertical(matrix, i, j) {
   for (let index = 0; index < 4; index++) {
     array.push(matrix[i + index][j]);
   }
-  console.log(`El array Vertical ${array}`);
+  // console.log(`El array Vertical ${array}`);
   return array;
 }
 
@@ -504,8 +504,8 @@ function greatestProduct(matrix) {
 
   for (let i = 0; i < 20; i++) {
     for (let j = 0; j < 20; j++) {
-      console.log(` MAXPRODUCT: ${maxProduct}
-      Estoy evaluando la posicion: ${i},${j}`);
+      // console.log(` MAXPRODUCT: ${maxProduct}
+      // Estoy evaluando la posicion: ${i},${j}`);
       if (i < 20 && j < 17) {
         selectedArrayH = selectArrayHorizontal(matrix, i, j);
         maxProduct = compareMaxProduct(selectedArrayH, product, maxProduct);
@@ -516,5 +516,6 @@ function greatestProduct(matrix) {
       }
     }
   }
+  console.log(` MAXPRODUCT: ${maxProduct}`);
   return maxProduct;
 }
